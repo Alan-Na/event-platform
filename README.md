@@ -10,11 +10,7 @@ It goes beyond a basic CRUD app by handling **seat limits, duplicate registratio
 
 | Product Experience | Admin Experience |
 | --- | --- |
-| ![Product screenshot placeholder](./docs/screenshots/product-placeholder.svg) | ![Admin screenshot placeholder](./docs/screenshots/admin-placeholder.svg) |
-
-> Replace the placeholders above with real screenshots when you are ready:
-> - `docs/screenshots/product-home.png`
-> - `docs/screenshots/admin-dashboard.png`
+| ![Product screenshot placeholder](./resources/1.png) | ![Admin screenshot placeholder](./resources/2.png) |
 
 ## What the product does
 

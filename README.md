@@ -8,9 +8,11 @@ It goes beyond a basic CRUD app by handling **seat limits, duplicate registratio
 
 ## Preview
 
-| Product Experience | Admin Experience |
+| Product Experience |
 | --- | --- |
-| ![Product screenshot placeholder](./resources/1.png) | ![Admin screenshot placeholder](./resources/2.png) |
+| ![Product screenshot placeholder](./resources/1.png) |
+| Admin Experience |
+| ![Admin screenshot placeholder](./resources/2.png) |
 
 ## What the product does
 

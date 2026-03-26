@@ -2,19 +2,15 @@
 
 [English](./README.md)
 
-**EventFlow** 是一个面向作品集与简历展示的、偏生产化的**全栈活动报名与候补平台**。
+**EventFlow** 是一个**全栈活动报名与候补平台**。
 
-它不只是一个普通 CRUD 网站，而是围绕真实业务流程设计：**容量限制、重复报名拦截、候补自动转正、角色权限控制、中英文国际化、缓存、异步通知、容器化部署与 CI 自动化**。整个项目的目标，是把它做成一个可以直接写进软件工程 / 全栈 / 后端岗位简历的完整项目。
+它不只是一个普通 CRUD 网站，而是围绕真实业务流程设计：**容量限制、重复报名拦截、候补自动转正、角色权限控制、缓存、异步通知、容器化部署与 CI 自动化**。
 
 ## 项目预览
 
 | 用户侧产品体验 | 管理后台体验 |
 | --- | --- |
-| ![Product screenshot placeholder](./docs/screenshots/product-placeholder.svg) | ![Admin screenshot placeholder](./docs/screenshots/admin-placeholder.svg) |
-
-> 之后可直接替换为真实截图：
-> - `docs/screenshots/product-home.png`
-> - `docs/screenshots/admin-dashboard.png`
+| ![Product screenshot placeholder](./resources/3.png) | ![Admin screenshot placeholder](./resources/4.png) |
 
 ## 产品能力概览
 
@@ -75,7 +71,7 @@ EventFlow 覆盖了三个角色和完整的活动报名生命周期：
 | 用户 | `alice@eventflow.local` | `User123!` |
 | 用户 | `bob@eventflow.local` | `User123!` |
 
-## 交付能力
+## 交付
 
 - 提供 REST API 与 Swagger UI 文档入口
 - 通过 Docker Compose 编排前端、后端、PostgreSQL、Redis、RabbitMQ、Nginx

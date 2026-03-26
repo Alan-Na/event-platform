@@ -67,15 +67,6 @@ The core business flow is designed around real product constraints:
 | Testing | JUnit 5, Mockito, Spring Security Test, Vitest, React Testing Library |
 | DevOps | Docker, Docker Compose, Nginx, GitHub Actions |
 
-## Why this project stands out
-
-This project is designed to read like a real software engineering build rather than a classroom exercise.
-
-- **Full-stack scope:** public browsing, authenticated user flows, admin tooling, and multilingual product UX
-- **Real business rules:** seat capacity, registration deadlines, waitlist ordering, and notification events
-- **Consistency-aware backend design:** transactional booking flow, row-level locking, partial unique indexes, and idempotent cancellation handling
-- **Production-minded delivery:** containerized services, database migration scripts, seeded demo data, API docs, CI pipeline, and representative tests
-
 ## Demo accounts
 
 | Role | Email | Password |
@@ -109,14 +100,3 @@ docker compose up --build
 ## Resume-ready summary
 
 **EventFlow** is a resume-grade full-stack platform that demonstrates how to build a complete product around constrained inventory-style transactions, multilingual UI, role-based admin tooling, and production-oriented delivery.
-
-Suggested themes to highlight in interviews or on a resume:
-
-- implemented transactional booking and waitlist promotion workflows under seat-capacity constraints
-- designed a role-aware admin portal and bilingual React frontend for public and authenticated journeys
-- integrated Redis caching, RabbitMQ notifications, Dockerized infrastructure, and CI automation into a single portfolio project
-
-## Repository language
-
-- English: `README.md`
-- 中文：`README_zh.md`

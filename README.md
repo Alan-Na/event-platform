@@ -2,7 +2,7 @@
 
 [简体中文](./README_zh.md)
 
-**EventFlow** is a production-style full-stack **event booking and waitlist platform** built to showcase real business workflows, modern web engineering, and backend consistency design in a portfolio-ready project.
+**EventFlow** is a full-stack **event booking and waitlist platform** built to showcase real business workflows, modern web engineering, and backend consistency design.
 
 It goes beyond a basic CRUD app by handling **seat limits, duplicate registration protection, waitlist promotion, role-based admin workflows, multilingual UI, caching, asynchronous notifications, containerized deployment, and CI automation**.
 
@@ -71,7 +71,7 @@ The core business flow is designed around real product constraints:
 | User | `alice@eventflow.local` | `User123!` |
 | User | `bob@eventflow.local` | `User123!` |
 
-## Delivery and developer experience
+## Developer experience
 
 - REST API documented through Swagger UI
 - Docker Compose orchestration for frontend, backend, PostgreSQL, Redis, RabbitMQ, and Nginx

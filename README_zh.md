@@ -12,7 +12,6 @@
 | --- |
 | ![Product screenshot placeholder](./resources/3.png) |
 | 管理后台体验 |
-| --- |
 | ![Admin screenshot placeholder](./resources/4.png) |
 
 ## 产品能力概览

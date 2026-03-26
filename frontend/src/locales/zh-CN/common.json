@@ -1,0 +1,32 @@
+{
+  "appName": "EventFlow",
+  "nav": {
+    "home": "首页",
+    "events": "活动",
+    "myBookings": "我的报名",
+    "profile": "个人中心",
+    "admin": "管理后台",
+    "login": "登录",
+    "register": "注册",
+    "logout": "退出登录",
+    "language": "语言"
+  },
+  "actions": {
+    "save": "保存",
+    "cancel": "取消",
+    "search": "浏览全部",
+    "create": "创建",
+    "edit": "编辑",
+    "publish": "发布",
+    "close": "关闭",
+    "confirm": "确认"
+  },
+  "status": {
+    "draft": "草稿",
+    "published": "已发布",
+    "closed": "已关闭",
+    "cancelled": "已取消",
+    "confirmed": "已确认",
+    "waiting": "候补中"
+  }
+}

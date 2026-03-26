@@ -1,0 +1,66 @@
+{
+  "home": {
+    "heroTitle": "发现并报名活动",
+    "heroSubtitle": "一个支持报名、候补、通知和后台管理的现代活动平台。",
+    "featuredTitle": "推荐活动",
+    "ctaBrowse": "浏览活动",
+    "ctaStart": "创建账号",
+    "featureSecurity": "JWT 鉴权与权限控制",
+    "featureCache": "Redis 热点缓存",
+    "featureQueue": "RabbitMQ 异步通知",
+    "featureI18n": "完整中英文切换"
+  },
+  "list": {
+    "title": "浏览活动",
+    "subtitle": "按关键词、分类、城市和时间进行筛选。",
+    "search": "搜索",
+    "searchPlaceholder": "按标题或关键词搜索",
+    "filterCategory": "分类",
+    "filterCity": "城市",
+    "dateFrom": "开始日期",
+    "dateTo": "结束日期",
+    "sort": "排序",
+    "sortStartAsc": "最早开始",
+    "sortStartDesc": "最晚开始",
+    "sortNewest": "最新创建",
+    "sortPopular": "最热门",
+    "allCategories": "全部分类",
+    "reset": "重置",
+    "loading": "正在加载活动...",
+    "error": "活动加载失败",
+    "empty": "当前筛选下没有活动"
+  },
+  "detail": {
+    "schedule": "活动时间",
+    "location": "活动地点",
+    "about": "活动介绍",
+    "capacity": "容量",
+    "remainingSeats": "剩余名额",
+    "waitlistCount": "候补人数",
+    "deadline": "报名截止时间",
+    "register": "立即报名",
+    "joinWaitlist": "加入候补",
+    "cancelBooking": "取消报名",
+    "loginToRegister": "登录后报名",
+    "alreadyBooked": "你已成功报名",
+    "alreadyWaiting": "你已在候补名单中",
+    "unavailable": "当前不可报名",
+    "actionFailed": "操作失败，请稍后重试",
+    "seatsAvailable": "剩余 {{count}} 个名额",
+    "waitlistOpen": "当前已满员，但仍可加入候补。",
+    "reasons": {
+      "EVENT_CANCELLED": "该活动已取消。",
+      "EVENT_CLOSED": "该活动已关闭。",
+      "EVENT_NOT_PUBLISHED": "该活动尚未发布。",
+      "REGISTRATION_CLOSED": "报名截止时间已过。",
+      "ALREADY_REGISTERED": "你已经报名成功。",
+      "ALREADY_WAITING": "你已经在候补中。"
+    }
+  },
+  "categories": {
+    "TECH": "技术",
+    "CAREER": "求职成长",
+    "DESIGN": "设计",
+    "COMMUNITY": "社区"
+  }
+}

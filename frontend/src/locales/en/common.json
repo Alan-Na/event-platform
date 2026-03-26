@@ -1,0 +1,32 @@
+{
+  "appName": "EventFlow",
+  "nav": {
+    "home": "Home",
+    "events": "Events",
+    "myBookings": "My Bookings",
+    "profile": "Profile",
+    "admin": "Admin",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "language": "Language"
+  },
+  "actions": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "search": "Browse all",
+    "create": "Create",
+    "edit": "Edit",
+    "publish": "Publish",
+    "close": "Close",
+    "confirm": "Confirm"
+  },
+  "status": {
+    "draft": "Draft",
+    "published": "Published",
+    "closed": "Closed",
+    "cancelled": "Cancelled",
+    "confirmed": "Confirmed",
+    "waiting": "Waiting"
+  }
+}

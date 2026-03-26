@@ -1,0 +1,54 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: eventflow-platform
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/eventflow}
+    username: ${DB_USERNAME:eventflow}
+    password: ${DB_PASSWORD:eventflow}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:eventflow}
+    password: ${RABBITMQ_PASSWORD:eventflow}
+  flyway:
+    enabled: true
+  cache:
+    type: redis
+  jackson:
+    default-property-inclusion: non_null
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:change-me-change-me-change-me-change-me-change-me-2026}
+    expiration-seconds: ${JWT_EXPIRATION_SECONDS:86400}
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173,http://localhost:4173}
+  scheduling:
+    close-expired-events-cron: ${CLOSE_EXPIRED_EVENTS_CRON:0 */15 * * * *}
+
+logging:
+  level:
+    org.springframework.security: INFO
+    com.eventflow.platform: INFO

@@ -1,0 +1,19 @@
+{
+  "title": "我的报名",
+  "subtitle": "查看已确认、候补和取消记录。",
+  "loading": "正在加载报名记录...",
+  "empty": "暂无报名记录",
+  "waitlistPosition": "候补顺位：第 {{position}} 位",
+  "messages": {
+    "cancelled": "报名状态已更新"
+  },
+  "actions": {
+    "cancel": "取消"
+  },
+  "tabs": {
+    "all": "全部",
+    "confirmed": "已确认",
+    "waiting": "候补中",
+    "cancelled": "已取消"
+  }
+}

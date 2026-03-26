@@ -1,0 +1,7 @@
+{
+  "bookingConfirmed": "你已成功报名 {{eventTitle}}。",
+  "waitlistJoined": "你已加入 {{eventTitle}} 的候补名单。",
+  "waitlistPromoted": "好消息：你已从候补转正，活动为 {{eventTitle}}。",
+  "bookingCancelled": "你在 {{eventTitle}} 的报名已取消。",
+  "eventCancelled": "{{eventTitle}} 已被取消。{{reason}}"
+}

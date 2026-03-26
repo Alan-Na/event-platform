@@ -1,0 +1,66 @@
+{
+  "home": {
+    "heroTitle": "Discover and book great events",
+    "heroSubtitle": "A modern platform for event registration, waitlists, notifications and admin operations.",
+    "featuredTitle": "Featured events",
+    "ctaBrowse": "Explore events",
+    "ctaStart": "Create an account",
+    "featureSecurity": "JWT auth & role-based access",
+    "featureCache": "Redis cache for hot reads",
+    "featureQueue": "Async notifications via RabbitMQ",
+    "featureI18n": "Full English / Chinese UI"
+  },
+  "list": {
+    "title": "Explore events",
+    "subtitle": "Search by keyword, category, city and time.",
+    "search": "Search",
+    "searchPlaceholder": "Search by title or keyword",
+    "filterCategory": "Category",
+    "filterCity": "City",
+    "dateFrom": "Date from",
+    "dateTo": "Date to",
+    "sort": "Sort",
+    "sortStartAsc": "Start time (earliest)",
+    "sortStartDesc": "Start time (latest)",
+    "sortNewest": "Newest",
+    "sortPopular": "Most popular",
+    "allCategories": "All categories",
+    "reset": "Reset",
+    "loading": "Loading events...",
+    "error": "Failed to load events",
+    "empty": "No events match your current filters"
+  },
+  "detail": {
+    "schedule": "Schedule",
+    "location": "Location",
+    "about": "About this event",
+    "capacity": "Capacity",
+    "remainingSeats": "Remaining seats",
+    "waitlistCount": "Waitlist",
+    "deadline": "Registration deadline",
+    "register": "Register now",
+    "joinWaitlist": "Join waitlist",
+    "cancelBooking": "Cancel booking",
+    "loginToRegister": "Log in to register",
+    "alreadyBooked": "You are already registered",
+    "alreadyWaiting": "You are already on the waitlist",
+    "unavailable": "Unavailable",
+    "actionFailed": "Action failed, please try again",
+    "seatsAvailable": "{{count}} seats available",
+    "waitlistOpen": "The event is full, but the waitlist is open.",
+    "reasons": {
+      "EVENT_CANCELLED": "This event has been cancelled.",
+      "EVENT_CLOSED": "This event is closed.",
+      "EVENT_NOT_PUBLISHED": "This event is not published yet.",
+      "REGISTRATION_CLOSED": "The registration deadline has passed.",
+      "ALREADY_REGISTERED": "You are already registered.",
+      "ALREADY_WAITING": "You are already on the waitlist."
+    }
+  },
+  "categories": {
+    "TECH": "Technology",
+    "CAREER": "Career",
+    "DESIGN": "Design",
+    "COMMUNITY": "Community"
+  }
+}

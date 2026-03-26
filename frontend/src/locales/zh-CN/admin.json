@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "dashboard": "仪表盘",
+    "events": "活动管理",
+    "users": "用户管理"
+  },
+  "actions": {
+    "createEvent": "创建活动",
+    "search": "搜索",
+    "publish": "发布",
+    "close": "关闭",
+    "cancel": "取消",
+    "edit": "编辑",
+    "viewRegistrations": "报名名单",
+    "save": "保存",
+    "saving": "保存中..."
+  },
+  "messages": {
+    "published": "活动已发布",
+    "closed": "活动已关闭",
+    "cancelled": "活动已取消",
+    "created": "活动已创建",
+    "saved": "活动已更新"
+  },
+  "dashboard": {
+    "title": "管理后台",
+    "subtitle": "监控平台活动和报名情况。",
+    "totalEvents": "活动总数",
+    "totalUsers": "用户总数",
+    "confirmedBookings": "确认报名数",
+    "waitingEntries": "候补人数",
+    "publishedEvents": "已发布活动",
+    "upcomingEvents": "即将开始活动",
+    "fillRate": "平均填充率"
+  },
+  "events": {
+    "title": "活动管理",
+    "subtitle": "创建、发布、关闭或取消活动。"
+  },
+  "users": {
+    "title": "用户管理",
+    "subtitle": "查看用户角色和报名活跃度。"
+  },
+  "create": {
+    "title": "创建活动",
+    "subtitle": "先保存草稿，准备好后再发布。"
+  },
+  "edit": {
+    "title": "编辑活动",
+    "subtitle": "更新活动信息、时间和容量。"
+  },
+  "filters": {
+    "keyword": "关键词",
+    "status": "状态",
+    "allStatuses": "全部状态"
+  },
+  "form": {
+    "title": "标题",
+    "summary": "摘要",
+    "description": "详情",
+    "coverImageUrl": "封面图地址",
+    "locationName": "场地名称",
+    "address": "地址",
+    "city": "城市",
+    "capacity": "容量",
+    "startTime": "开始时间",
+    "endTime": "结束时间",
+    "registrationDeadline": "报名截止时间",
+    "category": "分类",
+    "tags": "标签（逗号分隔）",
+    "featured": "显示在首页"
+  },
+  "table": {
+    "event": "活动",
+    "time": "时间",
+    "status": "状态",
+    "capacity": "容量",
+    "actions": "操作"
+  }
+}

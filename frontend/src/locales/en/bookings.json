@@ -1,0 +1,19 @@
+{
+  "title": "My bookings",
+  "subtitle": "Track confirmed registrations, waitlist entries and cancellations.",
+  "loading": "Loading bookings...",
+  "empty": "No booking records found",
+  "waitlistPosition": "Waitlist position: #{{position}}",
+  "messages": {
+    "cancelled": "Registration updated"
+  },
+  "actions": {
+    "cancel": "Cancel"
+  },
+  "tabs": {
+    "all": "All",
+    "confirmed": "Confirmed",
+    "waiting": "Waitlist",
+    "cancelled": "Cancelled"
+  }
+}

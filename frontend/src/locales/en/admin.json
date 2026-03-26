@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "events": "Events",
+    "users": "Users"
+  },
+  "actions": {
+    "createEvent": "Create event",
+    "search": "Search",
+    "publish": "Publish",
+    "close": "Close",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "viewRegistrations": "Registrations",
+    "save": "Save",
+    "saving": "Saving..."
+  },
+  "messages": {
+    "published": "Event published",
+    "closed": "Event closed",
+    "cancelled": "Event cancelled",
+    "created": "Event created",
+    "saved": "Event updated"
+  },
+  "dashboard": {
+    "title": "Admin dashboard",
+    "subtitle": "Monitor activity and platform usage.",
+    "totalEvents": "Total events",
+    "totalUsers": "Total users",
+    "confirmedBookings": "Confirmed bookings",
+    "waitingEntries": "Waitlist entries",
+    "publishedEvents": "Published events",
+    "upcomingEvents": "Upcoming events",
+    "fillRate": "Average fill rate"
+  },
+  "events": {
+    "title": "Manage events",
+    "subtitle": "Create, publish, close and cancel events."
+  },
+  "users": {
+    "title": "User management",
+    "subtitle": "Review account roles and registration activity."
+  },
+  "create": {
+    "title": "Create event",
+    "subtitle": "Draft a new event and publish when ready."
+  },
+  "edit": {
+    "title": "Edit event",
+    "subtitle": "Update event details, capacity and schedule."
+  },
+  "filters": {
+    "keyword": "Keyword",
+    "status": "Status",
+    "allStatuses": "All statuses"
+  },
+  "form": {
+    "title": "Title",
+    "summary": "Summary",
+    "description": "Description",
+    "coverImageUrl": "Cover image URL",
+    "locationName": "Location name",
+    "address": "Address",
+    "city": "City",
+    "capacity": "Capacity",
+    "startTime": "Start time",
+    "endTime": "End time",
+    "registrationDeadline": "Registration deadline",
+    "category": "Category",
+    "tags": "Tags (comma separated)",
+    "featured": "Show on homepage"
+  },
+  "table": {
+    "event": "Event",
+    "time": "Time",
+    "status": "Status",
+    "capacity": "Capacity",
+    "actions": "Actions"
+  }
+}

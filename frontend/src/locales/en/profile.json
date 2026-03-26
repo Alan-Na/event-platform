@@ -1,0 +1,10 @@
+{
+  "title": "Profile",
+  "fullName": "Full name",
+  "email": "Email",
+  "language": "Language preference",
+  "notifications": "Recent notifications",
+  "messages": {
+    "saved": "Profile saved"
+  }
+}

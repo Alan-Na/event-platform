@@ -1,0 +1,7 @@
+{
+  "bookingConfirmed": "You are confirmed for {{eventTitle}}.",
+  "waitlistJoined": "You joined the waitlist for {{eventTitle}}.",
+  "waitlistPromoted": "Good news — you were promoted from the waitlist for {{eventTitle}}.",
+  "bookingCancelled": "Your registration for {{eventTitle}} was cancelled.",
+  "eventCancelled": "{{eventTitle}} was cancelled. {{reason}}"
+}

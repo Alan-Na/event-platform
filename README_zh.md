@@ -67,15 +67,6 @@ EventFlow 覆盖了三个角色和完整的活动报名生命周期：
 | 测试 | JUnit 5、Mockito、Spring Security Test、Vitest、React Testing Library |
 | 工程化 | Docker、Docker Compose、Nginx、GitHub Actions |
 
-## 为什么这个项目适合写进简历
-
-这个项目的定位不是课程作业，而是一个有明确工程深度的全栈项目。
-
-- **全栈覆盖完整**：公共浏览、登录态用户流程、管理员后台、国际化前端全部具备
-- **业务规则真实**：容量限制、截止时间、候补排队、转正通知、角色权限都贴近真实业务
-- **后端设计有深度**：报名与取消链路考虑事务、一致性、并发与幂等性问题
-- **工程交付完整**：Docker Compose、数据库迁移、种子数据、Swagger API 文档、CI 流程、代表性测试
-
 ## 演示账号
 
 | 角色 | 邮箱 | 密码 |
@@ -105,18 +96,3 @@ docker compose up --build
 - 后端 API：`http://localhost:8080/api/v1`
 - Swagger UI：`http://localhost:8080/swagger-ui.html`
 - RabbitMQ 管理台：`http://localhost:15672`
-
-## 简历描述参考
-
-**EventFlow** 可以作为一个标准的全栈项目写入简历，重点体现“真实业务流程 + 工程化能力 + 后端一致性设计 + 前端产品体验”。
-
-适合重点强调的方向：
-
-- 设计并实现带候补自动转正的活动报名系统，覆盖容量控制、状态流转与通知流程
-- 构建支持角色权限控制和中英文国际化的 React 前端与管理员后台
-- 集成 Redis、RabbitMQ、Docker Compose 与 GitHub Actions，形成完整工程化交付链路
-
-## 文档语言
-
-- English: `README.md`
-- 中文：`README_zh.md`

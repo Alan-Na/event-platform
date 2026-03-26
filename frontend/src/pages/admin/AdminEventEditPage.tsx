@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
 import { EventForm } from '@/components/admin/EventForm';
 import { updateAdminEventApi } from '@/api/admin.api';
 import { apiClient } from '@/api/axios';
-import type { ApiResponse } from '@/types/common';
+import type { ApiResponse, ApiValidationError } from '@/types/common';
 import type { EventDetail, EventUpsertRequest } from '@/types/event';
 import { useUiStore } from '@/store/ui.store';
 
@@ -14,6 +15,7 @@ export function AdminEventEditPage() {
   const navigate = useNavigate();
   const addToast = useUiStore((state) => state.addToast);
   const [event, setEvent] = useState<EventDetail | null>(null);
+  const [saving, setSaving] = useState(false);
 
   useEffect(() => {
     if (!id) return;
@@ -52,11 +54,23 @@ export function AdminEventEditPage() {
       </div>
       <EventForm
         initialValue={initialValue}
+        loading={saving}
         onSubmit={async (payload) => {
           if (!id) return;
-          await updateAdminEventApi(id, payload);
-          addToast({ title: t('messages.saved'), tone: 'success' });
-          navigate('/admin/events');
+          setSaving(true);
+          try {
+            await updateAdminEventApi(id, payload);
+            addToast({ title: t('messages.saved'), tone: 'success' });
+            navigate('/admin/events');
+          } catch (error) {
+            let message = 'Save failed';
+            if (axios.isAxiosError<ApiValidationError>(error)) {
+              message = error.response?.data?.errors?.[0]?.message || error.response?.data?.message || message;
+            }
+            addToast({ title: message, tone: 'error' });
+          } finally {
+            setSaving(false);
+          }
         }}
       />
     </div>

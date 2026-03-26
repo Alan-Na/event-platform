@@ -4,12 +4,14 @@ import com.eventflow.platform.dto.event.CurrentUserRegistrationDto;
 import com.eventflow.platform.dto.event.EventDetailDto;
 import com.eventflow.platform.dto.event.EventSummaryDto;
 import com.eventflow.platform.entity.Event;
+import java.util.Set;
 import org.springframework.stereotype.Component;
 
 @Component
 public class EventMapper {
 
     public EventSummaryDto toSummaryDto(Event event) {
+        Set<String> tags = event.getTags() == null ? Set.of() : Set.copyOf(event.getTags());
         return new EventSummaryDto(
                 event.getId(),
                 event.getSlug(),
@@ -27,10 +29,11 @@ public class EventMapper {
                 event.getFeatured(),
                 event.getStatus(),
                 event.getCategory() != null ? event.getCategory().getCode() : null,
-                event.getTags());
+                tags);
     }
 
     public EventDetailDto toDetailDto(Event event, boolean bookable, String reason, CurrentUserRegistrationDto currentRegistration) {
+        Set<String> tags = event.getTags() == null ? Set.of() : Set.copyOf(event.getTags());
         return new EventDetailDto(
                 event.getId(),
                 event.getSlug(),
@@ -51,7 +54,7 @@ public class EventMapper {
                 event.getFeatured(),
                 event.getStatus(),
                 event.getCategory() != null ? event.getCategory().getCode() : null,
-                event.getTags(),
+                tags,
                 bookable,
                 reason,
                 currentRegistration);

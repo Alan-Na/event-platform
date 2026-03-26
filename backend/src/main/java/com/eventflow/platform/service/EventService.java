@@ -28,6 +28,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -38,6 +39,7 @@ public class EventService {
     private final WaitlistEntryRepository waitlistEntryRepository;
     private final EventMapper eventMapper;
 
+    @Transactional(readOnly = true)
     public PageResponse<EventSummaryDto> getPublicEvents(EventQueryRequest queryRequest) {
         Pageable pageable = PageRequest.of(queryRequest.getPage(), queryRequest.getSize(), resolveSort(queryRequest.getSort()));
         Specification<Event> specification = Specification.where(EventSpecifications.statusIn(List.of(EventStatus.PUBLISHED, EventStatus.CLOSED, EventStatus.CANCELLED)))
@@ -52,12 +54,14 @@ public class EventService {
     }
 
     @Cacheable(value = "featuredEvents", key = "#limit")
+    @Transactional(readOnly = true)
     public List<EventSummaryDto> getFeaturedEvents(int limit) {
         return eventRepository.findFeaturedPublished(DateTimeUtil.nowUtc(), PageRequest.of(0, limit)).stream()
                 .map(eventMapper::toSummaryDto)
                 .toList();
     }
 
+    @Transactional(readOnly = true)
     public EventDetailDto getEventDetail(Long eventId, Long currentUserId) {
         Event event = eventRepository.findDetailedById(eventId)
                 .orElseThrow(() -> new ResourceNotFoundException("Event not found"));

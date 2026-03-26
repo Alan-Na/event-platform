@@ -58,12 +58,14 @@ public class AdminEventService {
     private final NotificationPublisher notificationPublisher;
 
 
+    @Transactional(readOnly = true)
     public EventDetailDto getEventDetail(Long eventId) {
         Event event = eventRepository.findDetailedById(eventId)
                 .orElseThrow(() -> new ResourceNotFoundException("Event not found"));
         return eventMapper.toDetailDto(event, event.getStatus() == EventStatus.PUBLISHED, null, null);
     }
 
+    @Transactional(readOnly = true)
     public PageResponse<EventSummaryDto> getEvents(String status, String keyword, int page, int size) {
         Specification<Event> specification = Specification.where(EventSpecifications.keywordContains(keyword));
         if (status != null && !status.isBlank()) {
@@ -105,7 +107,7 @@ public class AdminEventService {
                 .createdBy(admin)
                 .updatedBy(admin)
                 .build();
-        event.setTags(new java.util.HashSet<>(request.tags()));
+        event.setTags(request.tags() == null ? new java.util.HashSet<>() : new java.util.HashSet<>(request.tags()));
         Event saved = eventRepository.save(event);
         return eventMapper.toDetailDto(saved, false, "EVENT_NOT_PUBLISHED", null);
     }

@@ -9,5 +9,8 @@ public record AdminBookingItemDto(
         String userEmail,
         String status,
         String source,
-        OffsetDateTime bookedAt) {
+        OffsetDateTime bookedAt,
+        String confirmationCode,
+        String ticketTypeName,
+        OffsetDateTime checkedInAt) {
 }

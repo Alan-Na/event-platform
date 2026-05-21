@@ -16,5 +16,10 @@ public record MyBookingItemDto(
         OffsetDateTime joinedAt,
         OffsetDateTime cancelledAt,
         Integer waitlistPosition,
-        boolean canCancel) {
+        boolean canCancel,
+        Long bookingId,
+        String confirmationCode,
+        String ticketTypeName,
+        OffsetDateTime checkedInAt,
+        String qrPayload) {
 }

@@ -46,6 +46,7 @@
     "alreadyWaiting": "你已在候补名单中",
     "unavailable": "当前不可报名",
     "actionFailed": "操作失败，请稍后重试",
+    "ticketType": "票种",
     "seatsAvailable": "剩余 {{count}} 个名额",
     "waitlistOpen": "当前已满员，但仍可加入候补。",
     "reasons": {

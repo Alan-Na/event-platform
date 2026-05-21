@@ -52,4 +52,18 @@ public class Booking extends BaseEntity {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "waitlist_entry_id")
     private WaitlistEntry waitlistEntry;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ticket_type_id")
+    private TicketType ticketType;
+
+    @Column(name = "confirmation_code", unique = true, length = 20)
+    private String confirmationCode;
+
+    @Column(name = "checked_in_at")
+    private OffsetDateTime checkedInAt;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "checked_in_by")
+    private User checkedInBy;
 }

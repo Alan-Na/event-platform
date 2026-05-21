@@ -45,4 +45,7 @@ public interface EventRepository extends JpaRepository<Event, Long>, JpaSpecific
     long countByStatus(EventStatus status);
 
     long countByStatusAndStartTimeAfter(EventStatus status, OffsetDateTime startTime);
+
+    @EntityGraph(attributePaths = "category")
+    List<Event> findAllByCreatedByIdOrderByCreatedAtDesc(Long createdById);
 }

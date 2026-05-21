@@ -2,8 +2,9 @@ import { apiClient } from '@/api/axios';
 import type { BookingActionResponse, MyBookingItem } from '@/types/booking';
 import type { ApiResponse, PageResponse } from '@/types/common';
 
-export async function createBookingApi(eventId: number) {
-  const { data } = await apiClient.post<ApiResponse<BookingActionResponse>>(`/events/${eventId}/bookings`);
+export async function createBookingApi(eventId: number, ticketTypeId?: number | null) {
+  const body = ticketTypeId ? { ticketTypeId } : undefined;
+  const { data } = await apiClient.post<ApiResponse<BookingActionResponse>>(`/events/${eventId}/bookings`, body);
   return data.data;
 }
 

@@ -1,0 +1,50 @@
+{
+  "nav": {
+    "dashboard": "控制台",
+    "myEvents": "我的活动",
+    "checkIn": "签到"
+  },
+  "dashboard": {
+    "title": "主办方控制台",
+    "totalEvents": "活动总数",
+    "publishedEvents": "已发布",
+    "totalConfirmed": "已确认报名",
+    "totalWaitlist": "候补人数",
+    "totalCheckedIn": "已签到",
+    "upcomingEvents": "即将开始的活动"
+  },
+  "events": {
+    "title": "我的活动",
+    "createNew": "创建活动",
+    "noEvents": "暂无活动，创建您的第一个活动吧！",
+    "edit": "编辑",
+    "publish": "发布",
+    "close": "关闭",
+    "registrations": "报名列表",
+    "exportCsv": "导出 CSV"
+  },
+  "checkin": {
+    "title": "签到",
+    "subtitle": "输入参会者的确认码完成签到。",
+    "confirmationCode": "确认码",
+    "placeholder": "例如 EF1234567890",
+    "submit": "签到",
+    "success": "签到成功！",
+    "attendee": "参会者",
+    "email": "邮箱",
+    "ticket": "票种",
+    "checkedInAt": "签到时间"
+  },
+  "registrations": {
+    "title": "报名列表",
+    "exportCsv": "导出 CSV",
+    "bookingId": "订单号",
+    "name": "姓名",
+    "email": "邮箱",
+    "status": "状态",
+    "ticket": "票种",
+    "bookedAt": "报名时间",
+    "code": "确认码",
+    "checkedIn": "已签到"
+  }
+}

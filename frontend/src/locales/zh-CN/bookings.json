@@ -4,6 +4,10 @@
   "loading": "正在加载报名记录...",
   "empty": "暂无报名记录",
   "waitlistPosition": "候补顺位：第 {{position}} 位",
+  "confirmationCode": "确认码",
+  "ticketType": "票种",
+  "checkedIn": "已签到",
+  "notCheckedIn": "未签到",
   "messages": {
     "cancelled": "报名状态已更新"
   },

@@ -1,0 +1,98 @@
+{
+  "title": "EventFlow — Overview",
+  "uid": "eventflow-overview",
+  "version": 1,
+  "schemaVersion": 38,
+  "refresh": "30s",
+  "time": { "from": "now-1h", "to": "now" },
+  "panels": [
+    {
+      "id": 1,
+      "title": "HTTP Request Rate (req/s)",
+      "type": "timeseries",
+      "gridPos": { "x": 0, "y": 0, "w": 12, "h": 7 },
+      "targets": [
+        {
+          "expr": "sum(rate(http_server_requests_seconds_count{application=\"eventflow-platform\"}[1m])) by (uri, method, status)",
+          "legendFormat": "{{method}} {{uri}} {{status}}"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "HTTP p95 Latency (ms)",
+      "type": "timeseries",
+      "gridPos": { "x": 12, "y": 0, "w": 12, "h": 7 },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(http_server_requests_seconds_bucket{application=\"eventflow-platform\"}[1m])) by (le, uri)) * 1000",
+          "legendFormat": "p95 {{uri}}"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "JVM Heap Memory Used (MB)",
+      "type": "timeseries",
+      "gridPos": { "x": 0, "y": 7, "w": 8, "h": 7 },
+      "targets": [
+        {
+          "expr": "jvm_memory_used_bytes{application=\"eventflow-platform\", area=\"heap\"} / 1048576",
+          "legendFormat": "Heap Used MB"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Booking Attempts",
+      "type": "timeseries",
+      "gridPos": { "x": 8, "y": 7, "w": 8, "h": 7 },
+      "targets": [
+        {
+          "expr": "sum(rate(eventflow_booking_attempts_total{application=\"eventflow-platform\"}[1m])) by (result, source)",
+          "legendFormat": "{{result}} / {{source}}"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Waitlist Joins & Promotions",
+      "type": "timeseries",
+      "gridPos": { "x": 16, "y": 7, "w": 8, "h": 7 },
+      "targets": [
+        {
+          "expr": "rate(eventflow_waitlist_joins_total{application=\"eventflow-platform\"}[1m])",
+          "legendFormat": "Joins/s"
+        },
+        {
+          "expr": "rate(eventflow_waitlist_promotions_total{application=\"eventflow-platform\"}[1m])",
+          "legendFormat": "Promotions/s"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Notifications Published by Type",
+      "type": "timeseries",
+      "gridPos": { "x": 0, "y": 14, "w": 12, "h": 7 },
+      "targets": [
+        {
+          "expr": "sum(rate(eventflow_notification_published_total{application=\"eventflow-platform\"}[1m])) by (notification_type)",
+          "legendFormat": "{{notification_type}}"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Check-in Attempts",
+      "type": "timeseries",
+      "gridPos": { "x": 12, "y": 14, "w": 12, "h": 7 },
+      "targets": [
+        {
+          "expr": "sum(rate(eventflow_checkin_attempts_total{application=\"eventflow-platform\"}[1m])) by (result)",
+          "legendFormat": "{{result}}"
+        }
+      ]
+    }
+  ]
+}

@@ -21,6 +21,10 @@ public interface WaitlistEntryRepository extends JpaRepository<WaitlistEntry, Lo
     @EntityGraph(attributePaths = {"user"})
     Optional<WaitlistEntry> findFirstByEventIdAndStatusOrderByPositionAsc(Long eventId, WaitlistStatus status);
 
+    @EntityGraph(attributePaths = {"user"})
+    Optional<WaitlistEntry> findFirstByEventIdAndTicketTypeIdAndStatusOrderByPositionAsc(
+            Long eventId, Long ticketTypeId, WaitlistStatus status);
+
     @EntityGraph(attributePaths = {"event", "event.category"})
     List<WaitlistEntry> findAllByUserIdOrderByJoinedAtDesc(Long userId);
 

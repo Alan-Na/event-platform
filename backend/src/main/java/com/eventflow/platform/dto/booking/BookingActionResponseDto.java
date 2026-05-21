@@ -9,5 +9,6 @@ public record BookingActionResponseDto(
         Integer remainingSeats,
         Integer confirmedCount,
         Integer waitlistCount,
-        String messageKey) {
+        String messageKey,
+        String confirmationCode) {
 }

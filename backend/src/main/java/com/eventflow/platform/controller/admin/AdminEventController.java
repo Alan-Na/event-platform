@@ -11,7 +11,9 @@ import com.eventflow.platform.dto.event.EventSummaryDto;
 import com.eventflow.platform.dto.event.UpdateEventRequest;
 import com.eventflow.platform.security.SecurityUtils;
 import com.eventflow.platform.service.AdminEventService;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
+import java.io.IOException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -88,5 +90,10 @@ public class AdminEventController {
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
         return ApiResponse.success("OK", "Waitlist fetched", adminEventService.getEventWaitlist(id, page, size));
+    }
+
+    @GetMapping("/{id}/registrations.csv")
+    public void exportCsv(@PathVariable Long id, HttpServletResponse response) throws IOException {
+        adminEventService.exportRegistrationsCsv(id, response);
     }
 }

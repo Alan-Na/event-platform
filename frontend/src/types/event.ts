@@ -1,3 +1,5 @@
+import type { TicketTypeSummary } from '@/types/ticket';
+
 export type EventStatus = 'DRAFT' | 'PUBLISHED' | 'CLOSED' | 'CANCELLED';
 
 export interface EventSummary {
@@ -34,6 +36,7 @@ export interface EventDetail extends EventSummary {
   bookable: boolean;
   bookableReason?: string | null;
   currentUserRegistration?: CurrentUserRegistration | null;
+  ticketTypes?: TicketTypeSummary[];
 }
 
 export interface EventQuery {

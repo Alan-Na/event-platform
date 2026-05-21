@@ -1,0 +1,50 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "myEvents": "My Events",
+    "checkIn": "Check-In"
+  },
+  "dashboard": {
+    "title": "Organizer Dashboard",
+    "totalEvents": "Total Events",
+    "publishedEvents": "Published",
+    "totalConfirmed": "Confirmed Bookings",
+    "totalWaitlist": "Waitlist",
+    "totalCheckedIn": "Checked In",
+    "upcomingEvents": "Upcoming Events"
+  },
+  "events": {
+    "title": "My Events",
+    "createNew": "Create Event",
+    "noEvents": "No events yet. Create your first event!",
+    "edit": "Edit",
+    "publish": "Publish",
+    "close": "Close",
+    "registrations": "Registrations",
+    "exportCsv": "Export CSV"
+  },
+  "checkin": {
+    "title": "Check-In",
+    "subtitle": "Enter the attendee's confirmation code to check them in.",
+    "confirmationCode": "Confirmation Code",
+    "placeholder": "e.g. EF1234567890",
+    "submit": "Check In",
+    "success": "Check-in successful!",
+    "attendee": "Attendee",
+    "email": "Email",
+    "ticket": "Ticket",
+    "checkedInAt": "Checked In At"
+  },
+  "registrations": {
+    "title": "Registrations",
+    "exportCsv": "Export CSV",
+    "bookingId": "Booking ID",
+    "name": "Name",
+    "email": "Email",
+    "status": "Status",
+    "ticket": "Ticket",
+    "bookedAt": "Booked At",
+    "code": "Code",
+    "checkedIn": "Checked In"
+  }
+}

@@ -7,6 +7,7 @@ import bookingsEn from '@/locales/en/bookings.json';
 import profileEn from '@/locales/en/profile.json';
 import adminEn from '@/locales/en/admin.json';
 import notificationsEn from '@/locales/en/notifications.json';
+import organizerEn from '@/locales/en/organizer.json';
 import commonZh from '@/locales/zh-CN/common.json';
 import authZh from '@/locales/zh-CN/auth.json';
 import eventsZh from '@/locales/zh-CN/events.json';
@@ -14,13 +15,14 @@ import bookingsZh from '@/locales/zh-CN/bookings.json';
 import profileZh from '@/locales/zh-CN/profile.json';
 import adminZh from '@/locales/zh-CN/admin.json';
 import notificationsZh from '@/locales/zh-CN/notifications.json';
+import organizerZh from '@/locales/zh-CN/organizer.json';
 import { getStoredLanguage, setStoredLanguage } from '@/utils/storage';
 
 void i18n.use(initReactI18next).init({
   lng: getStoredLanguage(),
   fallbackLng: 'en',
   defaultNS: 'common',
-  ns: ['common', 'auth', 'events', 'bookings', 'profile', 'admin', 'notifications'],
+  ns: ['common', 'auth', 'events', 'bookings', 'profile', 'admin', 'notifications', 'organizer'],
   interpolation: { escapeValue: false },
   resources: {
     en: {
@@ -30,7 +32,8 @@ void i18n.use(initReactI18next).init({
       bookings: bookingsEn,
       profile: profileEn,
       admin: adminEn,
-      notifications: notificationsEn
+      notifications: notificationsEn,
+      organizer: organizerEn
     },
     'zh-CN': {
       common: commonZh,
@@ -39,7 +42,8 @@ void i18n.use(initReactI18next).init({
       bookings: bookingsZh,
       profile: profileZh,
       admin: adminZh,
-      notifications: notificationsZh
+      notifications: notificationsZh,
+      organizer: organizerZh
     }
   }
 });

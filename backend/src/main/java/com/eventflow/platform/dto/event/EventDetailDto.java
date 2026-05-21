@@ -1,7 +1,9 @@
 package com.eventflow.platform.dto.event;
 
+import com.eventflow.platform.dto.ticket.TicketTypeSummaryDto;
 import com.eventflow.platform.enums.EventStatus;
 import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.Set;
 
 public record EventDetailDto(
@@ -27,5 +29,6 @@ public record EventDetailDto(
         Set<String> tags,
         boolean bookable,
         String bookableReason,
-        CurrentUserRegistrationDto currentUserRegistration) {
+        CurrentUserRegistrationDto currentUserRegistration,
+        List<TicketTypeSummaryDto> ticketTypes) {
 }

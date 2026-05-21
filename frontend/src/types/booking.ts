@@ -8,6 +8,7 @@ export interface BookingActionResponse {
   confirmedCount: number;
   waitlistCount: number;
   messageKey: string;
+  confirmationCode?: string | null;
 }
 
 export interface MyBookingItem {
@@ -25,4 +26,9 @@ export interface MyBookingItem {
   cancelledAt?: string | null;
   waitlistPosition?: number | null;
   canCancel: boolean;
+  bookingId?: number | null;
+  confirmationCode?: string | null;
+  ticketTypeName?: string | null;
+  checkedInAt?: string | null;
+  qrPayload?: string | null;
 }

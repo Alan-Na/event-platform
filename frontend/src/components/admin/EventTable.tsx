@@ -8,12 +8,14 @@ import { useLocaleStore } from '@/store/locale.store';
 
 interface EventTableProps {
   items: EventSummary[];
+  editBasePath?: string;
+  registrationsBasePath?: string;
   onPublish: (id: number) => void;
   onClose: (id: number) => void;
-  onCancel: (id: number) => void;
+  onCancel?: (id: number) => void;
 }
 
-export function EventTable({ items, onPublish, onClose, onCancel }: EventTableProps) {
+export function EventTable({ items, editBasePath = '/admin/events', registrationsBasePath = '/admin/events', onPublish, onClose, onCancel }: EventTableProps) {
   const { t } = useTranslation('admin');
   const language = useLocaleStore((state) => state.language);
 
@@ -41,11 +43,11 @@ export function EventTable({ items, onPublish, onClose, onCancel }: EventTablePr
               <td className="px-4 py-4 text-slate-600">{item.confirmedCount} / {item.capacity}</td>
               <td className="px-4 py-4">
                 <div className="flex flex-wrap gap-2">
-                  <Link to={`/admin/events/${item.id}/edit`}><Button variant="secondary">{t('actions.edit')}</Button></Link>
-                  <Link to={`/admin/events/${item.id}/registrations`}><Button variant="secondary">{t('actions.viewRegistrations')}</Button></Link>
+                  <Link to={`${editBasePath}/${item.id}/edit`}><Button variant="secondary">{t('actions.edit')}</Button></Link>
+                  <Link to={`${registrationsBasePath}/${item.id}/registrations`}><Button variant="secondary">{t('actions.viewRegistrations')}</Button></Link>
                   {item.status === 'DRAFT' || item.status === 'CLOSED' ? <Button onClick={() => onPublish(item.id)}>{t('actions.publish')}</Button> : null}
                   {item.status === 'PUBLISHED' ? <Button variant="secondary" onClick={() => onClose(item.id)}>{t('actions.close')}</Button> : null}
-                  {item.status !== 'CANCELLED' ? <Button variant="danger" onClick={() => onCancel(item.id)}>{t('actions.cancel')}</Button> : null}
+                  {onCancel && item.status !== 'CANCELLED' ? <Button variant="danger" onClick={() => onCancel(item.id)}>{t('actions.cancel')}</Button> : null}
                 </div>
               </td>
             </tr>

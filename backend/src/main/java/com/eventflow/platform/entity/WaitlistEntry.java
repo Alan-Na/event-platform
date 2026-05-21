@@ -48,4 +48,8 @@ public class WaitlistEntry extends BaseEntity {
 
     @Column(name = "cancelled_at")
     private OffsetDateTime cancelledAt;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ticket_type_id")
+    private TicketType ticketType;
 }

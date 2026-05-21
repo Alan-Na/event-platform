@@ -14,7 +14,11 @@ export function clearStoredToken() {
 }
 
 export function getStoredLanguage() {
-  return localStorage.getItem(LANGUAGE_KEY) || 'en';
+  try {
+    return localStorage.getItem(LANGUAGE_KEY) || 'en';
+  } catch {
+    return 'en';
+  }
 }
 
 export function setStoredLanguage(language: string) {

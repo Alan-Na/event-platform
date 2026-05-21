@@ -4,6 +4,10 @@
   "loading": "Loading bookings...",
   "empty": "No booking records found",
   "waitlistPosition": "Waitlist position: #{{position}}",
+  "confirmationCode": "Confirmation code",
+  "ticketType": "Ticket type",
+  "checkedIn": "Checked in",
+  "notCheckedIn": "Not checked in",
   "messages": {
     "cancelled": "Registration updated"
   },

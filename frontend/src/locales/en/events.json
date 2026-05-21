@@ -46,6 +46,7 @@
     "alreadyWaiting": "You are already on the waitlist",
     "unavailable": "Unavailable",
     "actionFailed": "Action failed, please try again",
+    "ticketType": "Ticket type",
     "seatsAvailable": "{{count}} seats available",
     "waitlistOpen": "The event is full, but the waitlist is open.",
     "reasons": {

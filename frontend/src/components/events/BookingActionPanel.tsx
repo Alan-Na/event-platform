@@ -17,13 +17,17 @@ export function BookingActionPanel({ event, onRefresh }: BookingActionPanelProps
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
   const addToast = useUiStore((state) => state.addToast);
   const [loading, setLoading] = useState(false);
+  const [selectedTicketId, setSelectedTicketId] = useState<number | null>(
+    event.ticketTypes && event.ticketTypes.length > 0 ? event.ticketTypes[0].id : null
+  );
 
   const registrationState = event.currentUserRegistration?.state;
+  const hasMultipleTicketTypes = (event.ticketTypes?.length ?? 0) > 1;
 
   const handleBook = async () => {
     setLoading(true);
     try {
-      const result = await createBookingApi(event.id);
+      const result = await createBookingApi(event.id, selectedTicketId);
       addToast({ title: i18n.t(result.messageKey), tone: 'success' });
       await onRefresh();
     } catch (error) {
@@ -86,6 +90,22 @@ export function BookingActionPanel({ event, onRefresh }: BookingActionPanelProps
       <div className="text-sm text-slate-600">
         {event.remainingSeats > 0 ? t('detail.seatsAvailable', { count: event.remainingSeats }) : t('detail.waitlistOpen')}
       </div>
+      {hasMultipleTicketTypes && (
+        <div>
+          <label className="mb-1 block text-sm font-medium text-slate-700">{t('detail.ticketType')}</label>
+          <select
+            className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-400"
+            value={selectedTicketId ?? ''}
+            onChange={(e) => setSelectedTicketId(Number(e.target.value))}
+          >
+            {event.ticketTypes!.map((tt) => (
+              <option key={tt.id} value={tt.id} disabled={tt.confirmedCount >= tt.capacity}>
+                {tt.name} {tt.confirmedCount >= tt.capacity ? '(Full)' : `(${tt.remainingSeats} left)`}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
       <Button fullWidth onClick={handleBook} disabled={loading}>
         {event.remainingSeats > 0 ? t('detail.register') : t('detail.joinWaitlist')}
       </Button>

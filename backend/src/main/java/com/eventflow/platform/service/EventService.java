@@ -16,6 +16,7 @@ import com.eventflow.platform.mapper.EventMapper;
 import com.eventflow.platform.repository.BookingRepository;
 import com.eventflow.platform.repository.EventRepository;
 import com.eventflow.platform.repository.WaitlistEntryRepository;
+import com.eventflow.platform.repository.TicketTypeRepository;
 import com.eventflow.platform.util.DateTimeUtil;
 import com.eventflow.platform.util.EventSpecifications;
 import java.time.OffsetDateTime;
@@ -37,6 +38,7 @@ public class EventService {
     private final EventRepository eventRepository;
     private final BookingRepository bookingRepository;
     private final WaitlistEntryRepository waitlistEntryRepository;
+    private final TicketTypeRepository ticketTypeRepository;
     private final EventMapper eventMapper;
 
     @Transactional(readOnly = true)
@@ -72,7 +74,8 @@ public class EventService {
         CurrentUserRegistrationDto registration = currentUserId == null ? null : findCurrentRegistration(currentUserId, eventId);
         String reason = determineBookableReason(event, registration);
         boolean bookable = reason == null;
-        return eventMapper.toDetailDto(event, bookable, reason, registration);
+        var ticketTypes = ticketTypeRepository.findAllByEventIdAndActiveTrueOrderByIdAsc(eventId);
+        return eventMapper.toDetailDto(event, bookable, reason, registration, ticketTypes);
     }
 
     private CurrentUserRegistrationDto findCurrentRegistration(Long userId, Long eventId) {

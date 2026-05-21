@@ -1,6 +1,7 @@
 import { Navigate, Outlet, createBrowserRouter } from 'react-router-dom';
 import { MainLayout } from '@/components/layout/MainLayout';
 import { AdminLayout } from '@/components/layout/AdminLayout';
+import { OrganizerLayout } from '@/components/layout/OrganizerLayout';
 import { HomePage } from '@/pages/HomePage';
 import { EventsPage } from '@/pages/EventsPage';
 import { EventDetailPage } from '@/pages/EventDetailPage';
@@ -14,8 +15,14 @@ import { AdminEventCreatePage } from '@/pages/admin/AdminEventCreatePage';
 import { AdminEventEditPage } from '@/pages/admin/AdminEventEditPage';
 import { AdminRegistrationsPage } from '@/pages/admin/AdminRegistrationsPage';
 import { AdminUsersPage } from '@/pages/admin/AdminUsersPage';
+import { OrganizerDashboardPage } from '@/pages/organizer/OrganizerDashboardPage';
+import { OrganizerEventsPage } from '@/pages/organizer/OrganizerEventsPage';
+import { OrganizerEventCreatePage } from '@/pages/organizer/OrganizerEventCreatePage';
+import { OrganizerEventEditPage } from '@/pages/organizer/OrganizerEventEditPage';
+import { OrganizerRegistrationsPage } from '@/pages/organizer/OrganizerRegistrationsPage';
+import { OrganizerCheckInPage } from '@/pages/organizer/OrganizerCheckInPage';
 import { useAuthStore } from '@/store/auth.store';
-import { isAdmin } from '@/utils/guards';
+import { isAdmin, isOrganizer } from '@/utils/guards';
 
 function ProtectedRoute() {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
@@ -25,6 +32,11 @@ function ProtectedRoute() {
 function AdminRoute() {
   const user = useAuthStore((state) => state.user);
   return isAdmin(user) ? <Outlet /> : <Navigate to="/" replace />;
+}
+
+function OrganizerRoute() {
+  const user = useAuthStore((state) => state.user);
+  return isOrganizer(user) ? <Outlet /> : <Navigate to="/" replace />;
 }
 
 function PublicOnlyRoute() {
@@ -52,6 +64,23 @@ export const router = createBrowserRouter([
         children: [
           { path: 'bookings', element: <MyBookingsPage /> },
           { path: 'profile', element: <ProfilePage /> }
+        ]
+      }
+    ]
+  },
+  {
+    path: '/organizer',
+    element: <OrganizerLayout />,
+    children: [
+      {
+        element: <OrganizerRoute />,
+        children: [
+          { index: true, element: <OrganizerDashboardPage /> },
+          { path: 'events', element: <OrganizerEventsPage /> },
+          { path: 'events/new', element: <OrganizerEventCreatePage /> },
+          { path: 'events/:id/edit', element: <OrganizerEventEditPage /> },
+          { path: 'events/:id/registrations', element: <OrganizerRegistrationsPage /> },
+          { path: 'events/:id/checkin', element: <OrganizerCheckInPage /> }
         ]
       }
     ]

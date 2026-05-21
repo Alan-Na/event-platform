@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher';
 import { useAuthStore } from '@/store/auth.store';
 import { Button } from '@/components/common/Button';
-import { isAdmin } from '@/utils/guards';
+import { isAdmin, isOrganizer } from '@/utils/guards';
 import { NotificationBell } from '@/components/notifications/NotificationBell';
 
 export function Navbar() {
@@ -26,6 +26,7 @@ export function Navbar() {
           <NavLink to="/events" className={navLinkClass}>{t('nav.events')}</NavLink>
           {isAuthenticated ? <NavLink to="/bookings" className={navLinkClass}>{t('nav.myBookings')}</NavLink> : null}
           {isAuthenticated ? <NavLink to="/profile" className={navLinkClass}>{t('nav.profile')}</NavLink> : null}
+          {isOrganizer(user) && !isAdmin(user) ? <NavLink to="/organizer" className={navLinkClass}>{t('nav.organizer')}</NavLink> : null}
           {isAdmin(user) ? <NavLink to="/admin" className={navLinkClass}>{t('nav.admin')}</NavLink> : null}
         </nav>
         <div className="flex items-center gap-3">
